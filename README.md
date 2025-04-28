@@ -1,1 +1,1 @@
-# JEstatstics
+# Jstatstic

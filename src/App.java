@@ -1,9 +1,20 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 public class App {
     public static void main(String[] args) throws Exception {
-            System.out.println("\t\tJEstatstics");
-            System.out.print("-- Controle de dados empresarial --");
-            System.out.print(" 2025");
+        
+      //Classe é um conjunto de objetos  
+        Mamiferos m1 = new Mamiferos();
+        m1.setNomeCientifico("Bos Tauros");
+        JOptionPane.showMessageDialog(null, "Nome cientifico: "+m1.getNomeCientifico(), "VACA", 1);
+
+        Mamiferos m2 = new Mamiferos();
+        m2.setNomeCientifico("Macrofilos");
+        JOptionPane.showMessageDialog(null, "Nome cientifico: "+m2.getNomeCientifico(), "CANGURU", 1);
+
+        Mamiferos m3 = new Mamiferos();
+        m3.setNomeCientifico("Trichichus");
+        JOptionPane.showMessageDialog(null, "Nome cientifico: "+m3.getNomeCientifico(), "PEIXE BOI", 1);
 
     }
 }

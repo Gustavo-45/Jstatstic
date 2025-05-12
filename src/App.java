@@ -7,7 +7,6 @@ public class App {
       int i = 0;
       String nome = "";
       String endereco;
-      String grandesa;
       
       while (i == 0){
       nome = JOptionPane.showInputDialog(null,"Qual seu nome?","JARDIM",JOptionPane.QUESTION_MESSAGE);
@@ -20,15 +19,32 @@ public class App {
         }
       }
 
-      Double largura = Double.parseDouble(JOptionPane.showInputDialog(null, "Olá "+nome+"\nQual é a largura do seu jardim?", "JARDIM", JOptionPane.QUESTION_MESSAGE));
-      Double comprimento = Double.parseDouble(JOptionPane.showInputDialog(null, "Olá "+nome+"\nQual é o comprimento do seu jardim?", "JARDIM", JOptionPane.QUESTION_MESSAGE));
-      Double area = comprimento * largura;
-        if(area>=200){
-          grandesa = "Grande";
+      int i2 = 0;
+      int contJardins = 1;
+      Double area = 0.0;
+      Double comprimento =0.0;
+      Double largura =0.0;
+      int contGrande = 0;
+      int contPequeno = 0;
+      while (i2 ==0) {
+        
+      largura = Double.parseDouble(JOptionPane.showInputDialog(null, "Olá "+nome+"\n para realizar o serviço preciso saber qual é a largura do "+contJardins+ "º jardim?", "JARDIM", JOptionPane.QUESTION_MESSAGE));
+      comprimento = Double.parseDouble(JOptionPane.showInputDialog(null, "Olá "+nome+"\nE qual é o comprimento do"+ contJardins+"º jardim?", "JARDIM", JOptionPane.QUESTION_MESSAGE));
+      area = area + comprimento * largura;
+        if(area>=100){
+          contGrande++;
       }
-        else{grandesa = "Pequeno";}
-      JOptionPane.showMessageDialog(null, "A área do seu jardim é de:"+area+"m2\nSeu jardim é: "+grandesa, "JARDIM", JOptionPane.INFORMATION_MESSAGE);
-   
+        else{ 
+          contPequeno++;
+      }
+      JOptionPane.showMessageDialog(null, "A área total é de:"+area+"m2\nVocê tem "+contGrande+" jardins grandes e "+contPequeno+" jardins pequenos.", "JARDIM", JOptionPane.INFORMATION_MESSAGE);
+
+      int escolha1 = JOptionPane.showConfirmDialog(null, "Gostaria de inserir mais um jardim?", "JARDIM",JOptionPane.YES_NO_OPTION);
+       if(escolha1 == JOptionPane.NO_OPTION){
+          i2++;
+       }
+      contJardins++;
+    }
       Double preço = 0.0;
       Double contServiço1 = 0.0;
       Double contServiço2 = 0.0;
@@ -38,7 +54,7 @@ public class App {
       boolean loop = true;
 
       while (loop) {
-      int servico =Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o número do serviço que gostaria de requisitar, para saber sua descrição(1-5):\n1-Plantio\n2-Poda\n3-Controle de pragas\n4-Adubação\n5-Irrigação"));
+      int servico =Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o número do serviço que gostaria de requisitar, para saber sua descrição(1-6):\n1-Plantio\n2-Poda\n3-Controle de pragas\n4-Adubação\n5-Irrigação\n6-Sair"));
         switch (servico) {
           case 1:
             JOptionPane.showMessageDialog(null,"Plantio: Profissionais capacitados para plantar diversas espécies de plantas e flores.\nValor:R$44,00 por m2");
@@ -65,20 +81,19 @@ public class App {
             contServiço5++;
             preço = preço + 120;
             break;
+            case 6: 
+            loop = false;
+            break;
           default:
-            JOptionPane.showMessageDialog(null, "Insira um número de acordo com as opções(1-5)", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Insira um número de acordo com as opções(1-6)", "Error", JOptionPane.ERROR_MESSAGE);
             break;
           }
-
-          int escolha2 = JOptionPane.showConfirmDialog(null,"Gostaria de mais algum serviço?","JARDIM",JOptionPane.YES_NO_OPTION);
-           if (escolha2 == JOptionPane.NO_OPTION){
-            loop = false;
-           }
         }
         Double total = contServiço1+contServiço2+contServiço3+contServiço4+contServiço5;
-        Double desconto = (preço * area) * (total /100);
-        Double preçoFinal = preço*area - desconto;
-        JOptionPane.showMessageDialog(null, "Parabéns você ganhou: "+Math.round(desconto)+"% por ter escolhido um total de "+total+" serviços.\nO preço final pelos serviços escolhidos é de: R$"+preçoFinal, "JARDIM", JOptionPane.INFORMATION_MESSAGE);
+        Double varlorTotal = preço * area;
+        Double desconto = varlorTotal * (total /100);
+        Double preçoFinal = varlorTotal - desconto;
+        JOptionPane.showMessageDialog(null, "Parabéns você ganhou: "+total+"% de desconto \nDesconto: R$"+desconto +"\nO preço final pelos serviços escolhidos é de: R$"+preçoFinal, "JARDIM", JOptionPane.INFORMATION_MESSAGE);
 
 
   }

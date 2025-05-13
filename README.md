@@ -1,18 +1,32 @@
-## Getting Started
+# 🌿 Alô, Jardim! - Sistema de Atendimento de Serviços de Jardinagem
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto é uma aplicação Java com interface gráfica via `JOptionPane` que simula um atendimento personalizado para clientes interessados em serviços de jardinagem. O sistema coleta informações do cliente, calcula áreas de jardins, oferece serviços personalizados com desconto progressivo e gera um relatório completo em arquivo `.txt`.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 📋 Funcionalidades
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Coleta de dados do cliente (nome e endereço).
+- Registro de múltiplos jardins com cálculo de área.
+- Classificação de jardins em grandes ou pequenos.
+- Cálculo de estatísticas das áreas (média, mediana, moda, máximo, mínimo).
+- Escolha entre 5 serviços de jardinagem:
+  - Plantio
+  - Poda
+  - Controle de Pragas
+  - Adubação
+  - Irrigação
+- Desconto progressivo de até 30% baseado no número de serviços requisitados.
+- Exibição de um gráfico com frequência de escolha dos serviços.
+- Geração de um relatório final salvo como `relatorio_final.txt`.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 🛠️ Tecnologias Utilizadas
 
-## Dependency Management
+- **Java SE**
+- **Swing (`JOptionPane`)**
+- Manipulação de arquivos com `FileWriter`
+- Estruturas de dados como vetores e controle de fluxo com loops e switch-case
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Tive que utilizar o CHAT-GPT no exercicio 7 e na organização do icodigo mas a logica e fundamentos são de meus conhecimentos, so utilizei para organizar de forma mais rapida e no exercicio 7, porque não sabia sobre graficos e não lembrava da cração de .txt

@@ -264,7 +264,5 @@ public class App {
     } catch (IOException e) {
         JOptionPane.showMessageDialog(null, "Erro ao salvar o relatório: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
     }
-
-
   }
 }

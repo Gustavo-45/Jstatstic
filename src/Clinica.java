@@ -1,5 +1,15 @@
 public class Clinica {
     int id;
-    String cnpj;
-    String nome;
+    private String cnpj;
+    private String nome;
+    public String getCnpj() {
+        return cnpj;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public Clinica(String nome, String cnpj){
+        this.cnpj = cnpj;
+        this.nome = nome;
+    }
 }

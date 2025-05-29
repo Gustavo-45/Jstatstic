@@ -3,6 +3,26 @@ public class Exercicio {
     private String nome;
     private String descricao;
     private String som;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setSom(String som) {
+        this.som = som;
+    }
+
+    public void setTempoMin(int tempoMin) {
+        this.tempoMin = tempoMin;
+    }
+
+    public void setExemplo(String exemplo) {
+        this.exemplo = exemplo;
+    }
+
     private int tempoMin;
 
     public String getDescricao() {

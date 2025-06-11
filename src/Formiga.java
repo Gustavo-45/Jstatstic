@@ -1,8 +1,9 @@
-public class Formiga extends Personagem{
+public class Formiga extends Personagem implements IArmamento{
     @Override
     public void mover(){
+        energia -= 2;
         System.out.println("Movendo....Energia: "+energia);     
-           energia -= 2;
+        
     }
     @Override
     public void fazerSom() {
@@ -11,5 +12,18 @@ public class Formiga extends Personagem{
     @Override
     public void comer() {
         energia += 2;
+        System.out.println("Comendo... Energia: "+energia);
+    }
+    @Override
+    public void atacar() {
+     System.out.println("Ataca de duas formas");
+    }
+    public Formiga(){
+        super();
+    }
+    public Formiga(int energia,String nome){
+        super(energia,nome);
+        super.getEnergia();
+        super.getNome();
     }
 }

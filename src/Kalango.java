@@ -1,8 +1,9 @@
-public class Kalango extends Personagem{
+public class Kalango extends Personagem implements IArmamento{
     @Override
     public void mover() {
-        System.out.println("Movendo....Energia: "+energia);
         energia -= 3;
+        System.out.println("Movendo....Energia: "+energia);
+        
     }
     @Override
     public void fazerSom() {
@@ -11,6 +12,18 @@ public class Kalango extends Personagem{
     @Override
     public void comer() {
         energia += 3;
+        System.out.println("Comendo... Energia: "+energia);
     }
-
+    @Override
+    public void atacar() {
+        System.out.println("Ataca de três formas");
+    }
+    public Kalango(){
+        super();
+    }
+    public Kalango(int energia, String nome){
+        super(energia,nome);
+        super.getNome();
+        super.getEnergia();
+    }
 }

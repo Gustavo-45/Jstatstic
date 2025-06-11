@@ -1,40 +1,40 @@
 public class App {
     public static void main(String[] args) throws Exception {
         
-        Formiga f = new Formiga();
+        Formiga f = new Formiga(10,"Formiga");
         System.out.println("----------Formiga----------");
-        f.energia = 10;
-        f.nome = "Formiga trabalhadora";
         for (int i = 0;i<3;i++){ 
             f.mover();
         }
         f.cansado();
         f.fazerSom();
         f.dormir();
-        System.out.println("Energia Final da "+f.nome + ": "+f.energia+"\n");
+        f.comer();
+        f.atacar();
+        System.out.println("Energia Final da "+f.getNome() + ": "+f.getEnergia()+"\n");
 
-        Abelha a = new Abelha();
+        Abelha a = new Abelha(5,"Abelha");
         System.out.println("----------Abelha----------");
-        a.energia = 5;
-        a.nome ="Abelha";
         for (int i = 0;i<3;i++){ 
             a.mover();
         }
         a.cansado();
         a.fazerSom();
         a.dormir();
-        System.out.println("Energia Final da "+a.nome + ": "+a.energia+"\n");
+        a.comer();
+        a.atacar();
+        System.out.println("Energia Final da "+a.getNome() + ": "+a.getEnergia()+"\n");
 
-        Kalango k = new Kalango();
+        Kalango k = new Kalango(10,"kalango");
         System.out.println("----------Kalango----------");
-        k.energia = 10;
-        k.nome ="kalango";
         for (int i = 0;i<3;i++){ 
             k.mover();
         }
         k.cansado();
         k.fazerSom();
         k.dormir();
-        System.out.println("Energia Final da "+k.nome +": "+k.energia+"\n");
+        k.comer();
+        k.atacar();
+        System.out.println("Energia Final da "+k.getNome() +": "+k.getEnergia()+"\n");
     }
 }

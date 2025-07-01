@@ -1,7 +1,10 @@
+import br.com.jkalango.view.JSplash;
+
 public class App {
     public static void main(String[] args) throws Exception {
         
         Formiga f = new Formiga(10,"Formiga");
+        new JSplash();
         System.out.println("----------Formiga----------");
         for (int i = 0;i<3;i++){ 
             f.mover();
